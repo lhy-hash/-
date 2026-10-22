@@ -1,0 +1,19 @@
+{
+  "name": "xile-console",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Vue3 控台 + Node 调度 + LiveTalking 本地闭环",
+  "scripts": {
+    "dev": "concurrently -n server,web -c cyan,magenta \"npm run dev -w apps/server\" \"npm run dev -w apps/web\"",
+    "dev:server": "npm run dev -w apps/server",
+    "dev:web": "npm run dev -w apps/web",
+    "start": "npm run start -w apps/server"
+  },
+  "workspaces": [
+    "apps/server",
+    "apps/web"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
